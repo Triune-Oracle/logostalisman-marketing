@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LogosTalisman Fractal AI - Revolutionary generative model training with 28% quality improvement, 100% uptime, and 89% scaling efficiency.">
+    <meta name="keywords" content="Fractal AI, VAE, machine learning, distributed training, generative models">
+    <title>LogosTalisman Fractal AI - Next Generation Model Training</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --slate: #1e293b;
+            --slate-dark: #0f172a;
+            --emerald: #10b981;
+            --cyan: #06b6d4;
+            --gold: #d4a574;
+            --text-light: #cbd5e1;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: var(--slate-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.2);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--gold), var(--emerald));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--cyan);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--slate) 0%, var(--slate-dark) 100%);
+            padding: 120px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+        
+        .metrics {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--emerald);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--cyan);
+            border: 1px solid var(--cyan);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(6, 182, 212, 0.1);
+        }
+        
+        section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .feature {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(51, 65, 85, 0.3);
+            padding: 32px;
+            border-radius: 4px;
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--emerald);
+        }
+        
+        .feature-description {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        
+        .validation-results {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            padding: 48px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .result-item {
+            margin-bottom: 24px;
+        }
+        
+        .result-value {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        
+        .result-label {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+        
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .pricing-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(51, 65, 85, 0.3);
+            padding: 32px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid var(--emerald);
+            transform: scale(1.05);
+        }
+        
+        .pricing-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .pricing-price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+        
+        .pricing-features {
+            text-align: left;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 2;
+            margin-bottom: 24px;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(51, 65, 85, 0.3);
+            padding: 40px;
+            border-radius: 4px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(51, 65, 85, 0.3);
+            color: var(--text-light);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            background: rgba(15, 23, 42, 0.8);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        footer {
+            background: var(--slate);
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(51, 65, 85, 0.2);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 16px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .metrics {
+                gap: 30px;
+            }
+            
+            .metric-value {
+                font-size: 32px;
+            }
+            
+            nav a {
+                margin-left: 16px;
+                font-size: 12px;
+            }
+            
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">LogosTalisman</div>
+            <nav>
+                <a href="#technology">Technology</a>
+                <a href="#validation">Validation</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>The Future of AI Training</h1>
+            <p class="tagline">Fractal geometry meets distributed systems. Production-ready. Validated. Ready to scale.</p>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">28%</div>
+                    <div class="metric-label">Quality Improvement</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Training Continuity</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">89%</div>
+                    <div class="metric-label">Scaling Efficiency</div>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Request Beta Access</button>
+                <button class="btn btn-secondary" onclick="alert('Demo scheduling coming soon')">Schedule Demo</button>
+            </div>
+        </div>
+    </div>
+    
+    <section id="technology">
+        <h2 class="section-title">Revolutionary Technology</h2>
+        <p class="section-subtitle">Fractal Prior VAE with enterprise-grade distributed orchestration</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔷</div>
+                <div class="feature-title">Fractal Prior Innovation</div>
+                <div class="feature-description">
+                    Applies fractal geometry constraints to VAE latent space, achieving 28% quality improvement over Gaussian baseline with mathematically rigorous regularization.
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">⚙️</div>
+                <div class="feature-title">Kubernetes Orchestration</div>
+                <div class="feature-description">
+                    Enterprise-grade distributed training with Fractal-Aware HPA, RDMA communication, and automatic pod scaling for near-linear performance.
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Circuit Breaker Resilience</div>
+                <div class="feature-description">
+                    Automatic fault detection and recovery ensures 100% training continuity. Handles mathematical singularities, timeouts, and gradient overflow gracefully.
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Real-Time Monitoring</div>
+                <div class="feature-description">
+                    Prometheus-based metrics exporter with anomaly detection, alerting, and comprehensive audit trails for compliance and debugging.
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-title">Near-Linear Scaling</div>
+                <div class="feature-description">
+                    89% scaling efficiency at 64+ GPU nodes. RDMA acceleration eliminates communication bottlenecks in distributed training.
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-title">Enterprise Security</div>
+                <div class="feature-description">
+                    Production-grade security, compliance support, audit logging, and role-based access control for enterprise deployments.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="validation" style="background: rgba(30, 41, 59, 0.3);">
+        <h2 class="section-title">Phase II Validation Complete</h2>
+        <p class="section-subtitle">Rigorous testing protocols confirm production readiness</p>
+        
+        <div class="validation-results">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+                <div class="result-item">
+                    <div class="result-value">28%</div>
+                    <div class="result-label">Quality Improvement</div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Blurry Manifold Benchmark: Fractal Prior vs. Gaussian baseline</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-value">100%</div>
+                    <div class="result-label">Training Continuity</div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Circuit Breaker Stress Testing: Zero training interruptions</p>
+                </div>
+                
+                <div class="result-item">
+                    <div class="result-value">89%</div>
+                    <div class="result-label">Scaling Efficiency</div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Fractal Autoscaling Benchmark: Near-linear at 64+ nodes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing">
+        <h2 class="section-title">Flexible Licensing</h2>
+        <p class="section-subtitle">Tailored for research, enterprise, and government deployments</p>
+        
+        <div class="pricing-table">
+            <div class="pricing-card">
+                <div class="pricing-title">Research License</div>
+                <div class="pricing-price">$50k</div>
+                <div class="pricing-features">
+                    ✓ Academic use rights<br>
+                    ✓ Up to 8 GPU nodes<br>
+                    ✓ Community support<br>
+                    ✓ Publication rights
+                </div>
+                <button class="btn btn-secondary" style="width: 100%;">Learn More</button>
+            </div>
+            
+            <div class="pricing-card featured">
+                <div class="pricing-title">Enterprise License</div>
+                <div class="pricing-price">$200k</div>
+                <div class="pricing-features">
+                    ✓ Commercial use rights<br>
+                    ✓ Unlimited GPU nodes<br>
+                    ✓ Priority support<br>
+                    ✓ Custom integrations<br>
+                    ✓ SLA guarantees
+                </div>
+                <button class="btn btn-primary" style="width: 100%;">Request Quote</button>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-title">Government License</div>
+                <div class="pricing-price">Custom</div>
+                <div class="pricing-features">
+                    ✓ Classified deployment<br>
+                    ✓ Security clearance support<br>
+                    ✓ Dedicated infrastructure<br>
+                    ✓ Audit & compliance<br>
+                    ✓ 24/7 support
+                </div>
+                <button class="btn btn-secondary" style="width: 100%;">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" style="background: rgba(30, 41, 59, 0.3);">
+        <h2 class="section-title">Request Beta Access</h2>
+        <p class="section-subtitle">Join our design partner program</p>
+        
+        <div class="contact-form">
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="organization">Organization</label>
+                    <input type="text" id="organization" name="organization" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell us about your use case</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Request Beta Access</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#technology">Technology</a>
+                <a href="#validation">Validation</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>© 2025 LogosTalisman. All rights reserved. | <a href="#" style="color: var(--text-muted);">Privacy Policy</a> | <a href="#" style="color: var(--text-muted);">Terms of Service</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const organization = document.getElementById('organization').value;
+            const message = document.getElementById('message').value;
+            
+            // In production, this would send to a backend API
+            alert(`Thank you, ${name}! We've received your beta access request. We'll contact you at ${email} within 24 hours.`);
+            
+            // Reset form
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
